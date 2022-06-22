@@ -97,6 +97,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { CountToModule } from 'angular-count-to';
 import { FooterComponent } from './footer/footer.component';
+import { AttendanceComponent } from './attendance/attendance.component';
+import { FileUploadComponent } from './attendance/file-upload/file-upload.component';
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   timeGridPlugin,
@@ -207,6 +209,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     WOtherComponent,
     ProfileComponent,
     FooterComponent,
+    AttendanceComponent,
+    FileUploadComponent,
   ],
   providers: [BsDatepickerModule]
 })
