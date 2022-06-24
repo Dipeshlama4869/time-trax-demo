@@ -8,6 +8,8 @@ import { AppComponent } from 'src/app/app.component';
 })
 export class LeftmenuComponent implements OnInit {
   isCollapsed = true;
+  isAttendanceCollapsed = true;
+  isBranchCollapsed = true;
   isProjectCollapsed = true;
   isJobportalCollapsed = true;
   isAuthCollapsed = true;
@@ -33,7 +35,12 @@ export class LeftmenuComponent implements OnInit {
     if ((this.router.url).includes('hr')) {
       this.isCollapsed = false;
     }
-
+    if((this.router.url).includes('attendance')) {
+      this.isAttendanceCollapsed = false;
+    }
+    if((this.router.url).includes('branch')) {
+      this.isBranchCollapsed = false;
+    }
     if ((this.router.url).includes('project')) {
       this.isProjectCollapsed = false;
     }

@@ -523,6 +523,26 @@
                             [routerLink]="['/project-todo-list']" href="javascript:void(0)">Todo List</a></li>
                 </ul>
             </li>
+            <!-- Attendance page route -->
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a href="javascript:void(0)" (click)="isAttendanceCollapsed = !isAttendanceCollapsed"
+                    [attr.aria-expanded]="!isAttendanceCollapsed" aria-controls="AttendanceCollapsed"
+                    class="has-arrow arrow-c"><i class="fe fe-airplay"></i><span>Attendance</span></a>
+                <ul class="collapse" id="AttendanceCollapsed" [collapse]="isAttendanceCollapsed" [isAnimated]="true">
+                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="submenu"
+                            [routerLink]="['/attendance']" href="javascript:void(0)">Dashboard</a></li>
+                </ul>
+            </li>
+            <!-- Branch page route -->
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a href="javascript:void(0)" (click)="isBranchCollapsed = !isBranchCollapsed"
+                    [attr.aria-expanded]="!isBranchCollapsed" aria-controls="BranchCollapsed"
+                    class="has-arrow arrow-c"><i class="fe fe-airplay"></i><span>Branch</span></a>
+                <ul class="collapse" id="BranchCollapsed" [collapse]="isBranchCollapsed" [isAnimated]="true">
+                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="submenu"
+                            [routerLink]="['/branch']" href="javascript:void(0)">Dashboard</a></li>
+                </ul>
+            </li>
             <li>
                 <a href="javascript:void(0)" (click)="isJobportalCollapsed = !isJobportalCollapsed"
                     [attr.aria-expanded]="!isJobportalCollapsed" aria-controls="JobCollapsed"

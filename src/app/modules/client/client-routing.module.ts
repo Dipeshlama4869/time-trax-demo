@@ -48,248 +48,260 @@ import { WStaticsComponent } from './widgets/w-statics/w-statics.component';
 import { WDataComponent } from './widgets/w-data/w-data.component';
 import { WSocialComponent } from './widgets/w-social/w-social.component';
 import { WOtherComponent } from './widgets/w-other/w-other.component';
+import { AttendanceComponent } from './attendance/attendance.component';
+import { BranchComponent } from './branch/branch.component';
 
 
 const routes: Routes = [
   {
+    path: 'attendance',
+    component: AttendanceComponent,
+    data: { title: ':: Time Trax :: Attendance'}
+  },
+  {
+    path: 'branch',
+    component: BranchComponent,
+    data: { title: ':: Time Trax :: Branch' }
+  },
+  {
     path: 'hr',
     component: HRMSComponent,
-    data: { title: ':: Epic :: Home' }
+    data: { title: ':: Time Trax :: Home' }
   },
   {
     path: 'hr-dashboard',
     component: HrDashboardComponent,
-    data: { title: ':: Epic :: Home' }
+    data: { title: ':: Time Trax :: Home' }
   },
   {
     path: 'hr-users',
     component: HrUsersComponent,
-    data: { title: ':: Epic :: HR Users' }
+    data: { title: ':: Time Trax :: HR Users' }
   },
   {
     path: 'hr-departments',
     component: HrDepartmentsComponent,
-    data: { title: ':: Epic :: HR Departments' }
+    data: { title: ':: Time Trax :: HR Departments' }
   },
   {
     path: 'hr-employee',
     component: HrEmployeeComponent,
-    data: { title: ':: Epic :: HR Employee' }
+    data: { title: ':: Time Trax :: HR Employee' }
   },
   {
     path: 'hr-activities',
     component: HrActivitiesComponent,
-    data: { title: ':: Epic :: HR Activities' }
+    data: { title: ':: Time Trax :: HR Activities' }
   },
   {
     path: 'hr-holidays',
     component: HrHolidaysComponent,
-    data: { title: ':: Epic :: HR Holidays' }
+    data: { title: ':: Time Trax :: HR Holidays' }
   },
   {
     path: 'hr-events',
     component: HrEventsComponent,
-    data: { title: ':: Epic :: HR Events' }
+    data: { title: ':: Time Trax :: HR Events' }
   },
   {
     path: 'hr-payroll',
     component: HrPayrollComponent,
-    data: { title: ':: Epic :: HR Payroll' }
+    data: { title: ':: Time Trax :: HR Payroll' }
   },
   {
     path: 'hr-accounts',
     component: HrAccountsComponent,
-    data: { title: ':: Epic :: HR Accounts' }
+    data: { title: ':: Time Trax :: HR Accounts' }
   },
   {
     path: 'hr-reports',
     component: HrReportComponent,
-    data: { title: ':: Epic :: HR Report' }
+    data: { title: ':: Time Trax :: HR Report' }
   },
   {
     path: 'search',
     component: SearchComponent,
-    data: { title: ':: Epic :: Search' }
+    data: { title: ':: Time Trax :: Search' }
   },
   {
     path: 'calender',
     component: CalenderComponent,
-    data: { title: ':: Epic :: Calender' }
+    data: { title: ':: Time Trax :: Calender' }
   },
   {
     path: 'contacts',
     component: ContactsComponent,
-    data: { title: ':: Epic :: Contacts' }
+    data: { title: ':: Time Trax :: Contacts' }
   },
   {
     path: 'chat',
     component: ChatComponent,
-    data: { title: ':: Epic ::  Chat' }
+    data: { title: ':: Time Trax ::  Chat' }
   },
   {
     path: 'filemanager',
     component: FilemanagerComponent,
-    data: { title: ':: Epic ::  Filemanager' }
+    data: { title: ':: Time Trax ::  Filemanager' }
   },
   {
     path: 'project',
     component: ProjectComponent,
-    data: { title: ':: Epic :: Project' }
+    data: { title: ':: Time Trax :: Project' }
   },
   {
     path: 'project-deashboard',
     component: PrDashboardComponent,
-    data: { title: ':: Epic :: Project Dashboard' }
+    data: { title: ':: Time Trax :: Project Dashboard' }
   },
   {
     path: 'project-list',
     component: PrProjectlistComponent,
-    data: { title: ':: Epic :: Project List' }
+    data: { title: ':: Time Trax :: Project List' }
   },
   {
     path: 'project-taskboard',
     component: PrTaskboardComponent,
-    data: { title: ':: Epic :: Project Taskboard' }
+    data: { title: ':: Time Trax :: Project Taskboard' }
   },
   {
     path: 'project-ticketlist',
     component: PrTicketlistComponent,
-    data: { title: ':: Epic :: Project Ticketlist' }
+    data: { title: ':: Time Trax :: Project Ticketlist' }
   },
   {
     path: 'project-ticketdetails',
     component: PrTicketdetailsComponent,
-    data: { title: ':: Epic :: Project Ticketdetails' }
+    data: { title: ':: Time Trax :: Project Ticketdetails' }
   },
   {
     path: 'project-clients',
     component: PrClientsComponent,
-    data: { title: ':: Epic :: Project Clients' }
+    data: { title: ':: Time Trax :: Project Clients' }
   },
   {
     path: 'project-todo-list',
     component: PrTodolistComponent,
-    data: { title: ':: Epic :: Project Todolist' }
+    data: { title: ':: Time Trax :: Project Todolist' }
   },
   {
     path: 'jobportal',
     component: JobPortalComponent,
-    data: { title: ':: Epic :: JobPortal' }
+    data: { title: ':: Time Trax :: JobPortal' }
   },
   {
     path: 'jobportal-job-dashboard',
     component: JobportalDashboardComponent,
-    data: { title: ':: Epic :: JobPortal Dashboard' }
+    data: { title: ':: Time Trax :: JobPortal Dashboard' }
   },
   {
     path: 'jobportal-positions',
     component: JobportalPositionsComponent,
-    data: { title: ':: Epic :: JobPortal Positions' }
+    data: { title: ':: Time Trax :: JobPortal Positions' }
   },
   {
     path: 'jobportal-applicants',
     component: JobportalApplicantsComponent,
-    data: { title: ':: Epic :: JobPortal Applicants' }
+    data: { title: ':: Time Trax :: JobPortal Applicants' }
   },
   {
     path: 'jobportal-resumes',
     component: JobportalResumesComponent,
-    data: { title: ':: Epic :: JobPortal Resumes' }
+    data: { title: ':: Time Trax :: JobPortal Resumes' }
   },
   {
     path: 'jobportal-settings',
     component: JobportalSettingsComponent,
-    data: { title: ':: Epic :: JobPortal Settings' }
+    data: { title: ':: Time Trax :: JobPortal Settings' }
   },
   {
     path: 'icon-fontawesome',
     component: IconFontawesomeComponent,
-    data: { title: ':: Epic :: Icon Fontawesome' }
+    data: { title: ':: Time Trax :: Icon Fontawesome' }
   },
   {
     path: 'icon-feather',
     component: IconFeatherComponent,
-    data: { title: ':: Epic :: Icon Feather' }
+    data: { title: ':: Time Trax :: Icon Feather' }
   },
   {
     path: 'icon-lines',
     component: IconLinesComponent,
-    data: { title: ':: Epic :: Icon Lines' }
+    data: { title: ':: Time Trax :: Icon Lines' }
   },
   {
     path: 'icon-flags',
     component: IconFlagsComponent,
-    data: { title: ':: Epic :: Icon Flags' }
+    data: { title: ':: Time Trax :: Icon Flags' }
   },
   {
     path: 'icon-payments',
     component: IconPaymentsComponent,
-    data: { title: ':: Epic :: Icon Payments' }
+    data: { title: ':: Time Trax :: Icon Payments' }
   },
   {
     path: 'table',
     component: TablesComponent,
-    data: { title: ':: Epic :: Tables' }
+    data: { title: ':: Time Trax :: Tables' }
   },
   {
     path: 'map',
     component: MapsComponent,
-    data: { title: ':: Epic :: Maps' }
+    data: { title: ':: Time Trax :: Maps' }
   },
   {
     path: 'gallery',
     component: GalleryComponent,
-    data: { title: ':: Epic :: Gallery' }
+    data: { title: ':: Time Trax :: Gallery' }
   },
   {
     path: 'charts',
     component: ChartsComponent,
-    data: { title: ':: Epic :: Charts' }
+    data: { title: ':: Time Trax :: Charts' }
   },
   {
     path: 'formelement',
     component: FormElementComponent,
-    data: { title: ':: Epic :: Forms' }
+    data: { title: ':: Time Trax :: Forms' }
   },
   {
     path: 'settings',
     component: SettingsComponent,
-    data: { title: ':: Epic :: Settings' }
+    data: { title: ':: Time Trax :: Settings' }
   },
   {
     path: 'profile',
     component: ProfileComponent,
-    data: { title: ':: Epic :: Profile' }
+    data: { title: ':: Time Trax :: Profile' }
   },
   {
     path: 'widgets',
     component: WidgetsComponent,
-    data: { title: ':: Epic :: Widgets' }
+    data: { title: ':: Time Trax :: Widgets' }
   },
   {
     path: 'widgets-card',
     component: WCardComponent,
-    data: { title: ':: Epic :: Widgets' }
+    data: { title: ':: Time Trax :: Widgets' }
   },
   {
     path: 'widgets-statistics',
     component: WStaticsComponent,
-    data: { title: ':: Epic :: Widgets' }
+    data: { title: ':: Time Trax :: Widgets' }
   },
   {
     path: 'widgets-data',
     component: WDataComponent,
-    data: { title: ':: Epic :: Widgets' }
+    data: { title: ':: Time Trax :: Widgets' }
   },
   {
     path: 'widgets-social',
     component: WSocialComponent,
-    data: { title: ':: Epic :: Widgets' }
+    data: { title: ':: Time Trax :: Widgets' }
   },
   {
     path: 'widgets-other',
     component: WOtherComponent,
-    data: { title: ':: Epic :: Widgets' }
+    data: { title: ':: Time Trax :: Widgets' }
   },
 ];
 

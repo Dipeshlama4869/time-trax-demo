@@ -99,6 +99,9 @@ import { CountToModule } from 'angular-count-to';
 import { FooterComponent } from './footer/footer.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { FileUploadComponent } from './attendance/file-upload/file-upload.component';
+import { DateInputComponent } from './_forms/date-input/date-input.component';
+import { TextInputComponent } from './_forms/text-input/text-input.component';
+import { BranchComponent } from './branch/branch.component';
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   timeGridPlugin,
@@ -211,6 +214,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     FooterComponent,
     AttendanceComponent,
     FileUploadComponent,
+    DateInputComponent,
+    TextInputComponent,
+    BranchComponent,
   ],
   providers: [BsDatepickerModule]
 })
