@@ -21,20 +21,6 @@ export class AppComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private titleService: Title) { }
   ngOnInit(): void {
-    sessionStorage.setItem("MinSideClass", "");
-    sessionStorage.setItem("HeaderClass", "top_dark");
-    sessionStorage.setItem("Font1", "font-montserrat");
-    sessionStorage.setItem("MenuIcon", "list-a");
-    sessionStorage.setItem("Toggle", "");
-    sessionStorage.setItem("Toggle2", "");
-    sessionStorage.setItem("Toggle3", "true");
-    sessionStorage.setItem("Toggle4", "");
-    sessionStorage.setItem("Toggle5", "");
-    sessionStorage.setItem("Toggle6", "");
-    sessionStorage.setItem("Toggle7", "");
-    sessionStorage.setItem("Toggle8", "");
-    sessionStorage.setItem("Toggle9", "");
-    sessionStorage.setItem("Toggle10", "");
 
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),

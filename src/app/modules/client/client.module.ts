@@ -20,7 +20,6 @@ import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { FormElementComponent } from './form-element/form-element.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatSliderModule } from '@angular/material/slider';
-import { TablesComponent } from './UI-ELEMENTS/tables/tables.component';
 import { ChartsComponent } from './charts/charts.component';
 import { NgApexchartsModule } from "ng-apexcharts";
 import { LineChartComponent } from './charts/line-chart/line-chart.component';
@@ -51,41 +50,8 @@ import { AgmCoreModule } from '@agm/core';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { CkeditorComponent } from './ckeditor/ckeditor.component';
 import { MapsComponent } from './maps/maps.component';
-import { HRMSComponent } from './hrms/hrms.component';
-import { HrUsersComponent } from './HRMS/hr-users/hr-users.component';
-import { HrDashboardComponent } from './HRMS/hr-dashboard/hr-dashboard.component';
-import { HrDepartmentsComponent } from './hrms/hr-departments/hr-departments.component';
-import { HrEmployeeComponent } from './hrms/hr-employee/hr-employee.component';
-import { HrActivitiesComponent } from './hrms/hr-activities/hr-activities.component';
-import { HrHolidaysComponent } from './hrms/hr-holidays/hr-holidays.component';
-import { HrEventsComponent } from './hrms/hr-events/hr-events.component';
-import { HrPayrollComponent } from './hrms/hr-payroll/hr-payroll.component';
-import { HrAccountsComponent } from './hrms/hr-accounts/hr-accounts.component';
-import { HrReportComponent } from './hrms/hr-report/hr-report.component';
 import { SearchComponent } from './search/search.component';
-import { ProjectComponent } from './project/project.component';
-import { PrDashboardComponent } from './project/pr-dashboard/pr-dashboard.component';
-import { PrProjectlistComponent } from './project/pr-projectlist/pr-projectlist.component';
-import { PrTaskboardComponent } from './project/pr-taskboard/pr-taskboard.component';
-import { PrTicketdetailsComponent } from './project/pr-ticketdetails/pr-ticketdetails.component';
-import { PrTicketlistComponent } from './project/pr-ticketlist/pr-ticketlist.component';
-import { PrClientsComponent } from './project/pr-clients/pr-clients.component';
-import { PrTodolistComponent } from './project/pr-todolist/pr-todolist.component';
-import { JobPortalComponent } from './job-portal/job-portal.component';
-import { JobportalDashboardComponent } from './job-portal/jobportal-dashboard/jobportal-dashboard.component';
-import { JobportalPositionsComponent } from './job-portal/jobportal-positions/jobportal-positions.component';
-import { JobportalApplicantsComponent } from './job-portal/jobportal-applicants/jobportal-applicants.component';
-import { JobportalResumesComponent } from './job-portal/jobportal-resumes/jobportal-resumes.component';
-import { JobportalSettingsComponent } from './job-portal/jobportal-settings/jobportal-settings.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { UIELEMENTSComponent } from './ui-elements/ui-elements.component';
-import { IconsComponent } from './UI-ELEMENTS/icons/icons.component';
-import { IconFontawesomeComponent } from './UI-ELEMENTS/icons/icon-fontawesome/icon-fontawesome.component';
-import { IconFeatherComponent } from './UI-ELEMENTS/icons/icon-feather/icon-feather.component';
-import { IconLinesComponent } from './UI-ELEMENTS/icons/icon-lines/icon-lines.component';
-import { IconFlagsComponent } from './UI-ELEMENTS/icons/icon-flags/icon-flags.component';
-import { IconPaymentsComponent } from './UI-ELEMENTS/icons/icon-payments/icon-payments.component';
-import { GalleryComponent } from './ui-elements/gallery/gallery.component';
 import { BasicradarChartComponent } from './charts/basicradar-chart/basicradar-chart.component';
 import { ColumnLineChartComponent } from './charts/column-line-chart/column-line-chart.component';
 import { WCardComponent } from './widgets/w-card/w-card.component';
@@ -102,6 +68,8 @@ import { FileUploadComponent } from './attendance/file-upload/file-upload.compon
 import { DateInputComponent } from './_forms/date-input/date-input.component';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
 import { BranchComponent } from './branch/branch.component';
+import { AddComponent } from './branch/add/add.component';
+import { UpdateComponent } from './branch/update/update.component';
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   timeGridPlugin,
@@ -147,7 +115,6 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     LeftmenuComponent,
     ChatComponent,
     FormElementComponent,
-    TablesComponent,
     ChartsComponent,
     LineChartComponent,
     BarChartComponent,
@@ -169,40 +136,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     WorldmapComponent,
     CkeditorComponent,
     MapsComponent,
-    HRMSComponent,
-    HrUsersComponent,
-    HrDashboardComponent,
-    HrDepartmentsComponent,
-    HrEmployeeComponent,
-    HrActivitiesComponent,
-    HrHolidaysComponent,
-    HrEventsComponent,
-    HrPayrollComponent,
-    HrAccountsComponent,
-    HrReportComponent,
     SearchComponent,
-    ProjectComponent,
-    PrDashboardComponent,
-    PrProjectlistComponent,
-    PrTaskboardComponent,
-    PrTicketdetailsComponent,
-    PrTicketlistComponent,
-    PrClientsComponent,
-    PrTodolistComponent,
-    JobPortalComponent,
-    JobportalDashboardComponent,
-    JobportalPositionsComponent,
-    JobportalApplicantsComponent,
-    JobportalResumesComponent,
-    JobportalSettingsComponent,
-    UIELEMENTSComponent,
-    IconsComponent,
-    IconFontawesomeComponent,
-    IconFeatherComponent,
-    IconLinesComponent,
-    IconFlagsComponent,
-    IconPaymentsComponent,
-    GalleryComponent,
     BasicradarChartComponent,
     ColumnLineChartComponent,
     WCardComponent,
@@ -217,6 +151,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     DateInputComponent,
     TextInputComponent,
     BranchComponent,
+    AddComponent,
+    UpdateComponent,
   ],
   providers: [BsDatepickerModule]
 })

@@ -7,12 +7,8 @@ import { AppComponent } from 'src/app/app.component';
   styleUrls: ['./leftmenu.component.scss']
 })
 export class LeftmenuComponent implements OnInit {
-  isCollapsed = true;
   isAttendanceCollapsed = true;
   isBranchCollapsed = true;
-  isProjectCollapsed = true;
-  isJobportalCollapsed = true;
-  isAuthCollapsed = true;
   isStaticticsCollapsed = true;
   isFriendsCollapsed = true;
   contactTab: boolean;
@@ -28,27 +24,15 @@ export class LeftmenuComponent implements OnInit {
   toggle9: boolean;
   toggle10: boolean;
   fontSelect: any;
-  menuIconSelect: any;
+  // menuIconSelect: any;
   staticscard: boolean = true;
   friendscard: boolean = true;
   constructor(private router: Router, @Inject(AppComponent) private app: AppComponent) {
-    if ((this.router.url).includes('hr')) {
-      this.isCollapsed = false;
-    }
     if((this.router.url).includes('attendance')) {
       this.isAttendanceCollapsed = false;
     }
     if((this.router.url).includes('branch')) {
       this.isBranchCollapsed = false;
-    }
-    if ((this.router.url).includes('project')) {
-      this.isProjectCollapsed = false;
-    }
-    if ((this.router.url).includes('jobportal')) {
-      this.isJobportalCollapsed = false;
-    }
-    if ((this.router.url).includes('auth')) {
-      this.isAuthCollapsed = false;
     }
   }
 
@@ -66,21 +50,21 @@ export class LeftmenuComponent implements OnInit {
       else {
         this.fontSelect = '';
       }
-      if (sessionStorage.getItem("MenuIcon") != "" && sessionStorage.getItem("MenuIcon") != null) {
-        this.menuIconSelect = sessionStorage.getItem("MenuIcon");
-        if (this.menuIconSelect == 'list-a') {
-          this.onSubMenuIcon(1)
-        }
-        else if (this.menuIconSelect == 'list-b') {
-          this.onSubMenuIcon(2)
-        }
-        else if (this.menuIconSelect == 'list-c') {
-          this.onSubMenuIcon(3)
-        }
-      }
-      else {
-        this.menuIconSelect = '';
-      }
+      // if (sessionStorage.getItem("MenuIcon") != "" && sessionStorage.getItem("MenuIcon") != null) {
+      //   this.menuIconSelect = sessionStorage.getItem("MenuIcon");
+      //   if (this.menuIconSelect == 'list-a') {
+      //     this.onSubMenuIcon(1)
+      //   }
+      //   else if (this.menuIconSelect == 'list-b') {
+      //     this.onSubMenuIcon(2)
+      //   }
+      //   else if (this.menuIconSelect == 'list-c') {
+      //     this.onSubMenuIcon(3)
+      //   }
+      // }
+      // else {
+      //   this.menuIconSelect = '';
+      // }
 
       if (sessionStorage.getItem("Toggle") != "" && sessionStorage.getItem("Toggle") != null) {
         this.toggle1 = true;
@@ -150,13 +134,6 @@ export class LeftmenuComponent implements OnInit {
       else {
         haderClassName.classList.remove("top_dark");
       }
-      const minSideClassName = document.getElementById("header_top");
-      if (sessionStorage.getItem("MinSideClass") != "" && sessionStorage.getItem("MinSideClass") != null) {
-        minSideClassName.classList.add(sessionStorage.getItem("MinSideClass"));
-      }
-      else {
-        minSideClassName.classList.remove("dark");
-      }
 
       if (sessionStorage.getItem("Toggle2") != "" && sessionStorage.getItem("Toggle2") != null) {
         document.getElementById('page_top').classList.add('sticky-top');
@@ -219,31 +196,32 @@ export class LeftmenuComponent implements OnInit {
     }
   }
 
-  onSubMenuIcon(type) {
-    debugger
-    const submenuIconclass = document.getElementsByClassName('submenu');
-    for (let index = 0; index < submenuIconclass.length; index++) {
-      const element = submenuIconclass[index];
-      element.classList.remove('list-a');
-      element.classList.remove('list-b');
-      element.classList.remove('list-c');
-      sessionStorage.setItem("MenuIcon", "");
-      if (type == 1) {
-        element.classList.add('list-a');
-        sessionStorage.setItem("MenuIcon", "list-a");
-      }
-      else if (type == 2) {
-        element.classList.add('list-b');
-        sessionStorage.setItem("MenuIcon", "list-b");
-      }
-      else if (type == 3) {
-        element.classList.add('list-c');
-        sessionStorage.setItem("MenuIcon", "list-c");
-      }
+  // onSubMenuIcon(type) {
+  //   debugger
+  //   const submenuIconclass = document.getElementsByClassName('submenu');
+  //   for (let index = 0; index < submenuIconclass.length; index++) {
+  //     const element = submenuIconclass[index];
+  //     element.classList.remove('list-a');
+  //     element.classList.remove('list-b');
+  //     element.classList.remove('list-c');
+  //     sessionStorage.setItem("MenuIcon", "");
+  //     if (type == 1) {
+  //       element.classList.add('list-a');
+  //       sessionStorage.setItem("MenuIcon", "list-a");
+  //       sessionStorage.setItem("MenuIcon", "list-b");
+  //     }
+  //     else if (type == 2) {
+  //       element.classList.add('list-b');
+  //       sessionStorage.setItem("MenuIcon", "list-b");
+  //     }
+  //     else if (type == 3) {
+  //       element.classList.add('list-c');
+  //       sessionStorage.setItem("MenuIcon", "list-c");
+  //     }
 
-    }
+  //   }
 
-  }
+  // }
 
   toggleUserMenu() {
     const body = document.getElementsByClassName('user_div')[0];
