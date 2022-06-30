@@ -7,6 +7,7 @@ import { AppComponent } from 'src/app/app.component';
   styleUrls: ['./leftmenu.component.scss']
 })
 export class LeftmenuComponent implements OnInit {
+  isClassCollapsed = true;
   isAttendanceCollapsed = true;
   isBranchCollapsed = true;
   isStaticticsCollapsed = true;
@@ -33,6 +34,9 @@ export class LeftmenuComponent implements OnInit {
     }
     if((this.router.url).includes('branch')) {
       this.isBranchCollapsed = false;
+    }
+    if((this.router.url).includes('class')) {
+      this.isClassCollapsed = false;
     }
   }
 
@@ -196,32 +200,6 @@ export class LeftmenuComponent implements OnInit {
     }
   }
 
-  // onSubMenuIcon(type) {
-  //   debugger
-  //   const submenuIconclass = document.getElementsByClassName('submenu');
-  //   for (let index = 0; index < submenuIconclass.length; index++) {
-  //     const element = submenuIconclass[index];
-  //     element.classList.remove('list-a');
-  //     element.classList.remove('list-b');
-  //     element.classList.remove('list-c');
-  //     sessionStorage.setItem("MenuIcon", "");
-  //     if (type == 1) {
-  //       element.classList.add('list-a');
-  //       sessionStorage.setItem("MenuIcon", "list-a");
-  //       sessionStorage.setItem("MenuIcon", "list-b");
-  //     }
-  //     else if (type == 2) {
-  //       element.classList.add('list-b');
-  //       sessionStorage.setItem("MenuIcon", "list-b");
-  //     }
-  //     else if (type == 3) {
-  //       element.classList.add('list-c');
-  //       sessionStorage.setItem("MenuIcon", "list-c");
-  //     }
-
-  //   }
-
-  // }
 
   toggleUserMenu() {
     const body = document.getElementsByClassName('user_div')[0];
@@ -234,18 +212,7 @@ export class LeftmenuComponent implements OnInit {
     }
     document.getElementsByClassName('overlay')[0].classList.toggle("open");
   }
-  toggleSettingMenu() {
-    const body = document.getElementsByClassName('right_sidebar')[0];
-
-    if (body.classList.contains('open')) {
-      body.classList.remove('open');
-    }
-    else {
-      body.classList.add('open');
-    }
-    document.getElementsByClassName('overlay')[0].classList.toggle("open");
-  }
-
+  
   onGeneralSetting(type, e) {
 
     const body = document.getElementsByTagName('body')[0];

@@ -1,0 +1,43 @@
+<div class="section-body">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center">
+            <ul class="nav nav-tabs page-header-tab">
+                <li class="nav-item"><a class="nav-link active" href="javascript:void(0)">Class</a></li>
+
+            </ul>
+            <div class="header-action">
+                <button type="button" class="btn btn-primary" [routerLink]="['/branch-add']" data-toggle="modal" data-target="#exampleModal"><i
+                        class="fe fe-plus mr-2"></i>Add Class</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-6 col-md-12 col-sm-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+            </h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table m-b-0">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Class Name</th>
+                            <th scope="col">Actions</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let branch of branches">
+                            <th>{{branch.branchName}}</th>
+                            <td>{{branch.isOutBranch}}</td>
+                            <td><button [routerLink]="['/branch-update']" >Update</button><button (click)="deleteBranch(branch.branchName)" ></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

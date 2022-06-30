@@ -1,0 +1,40 @@
+<app-leftmenu></app-leftmenu>
+<div class="page">
+    <app-header></app-header>
+    <div class="section-body">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between align-items-center">
+                <ul class="nav nav-tabs page-header-tab">
+                    <li class="nav-item"><a class="nav-link active" href="javascript:void(0)">Class</a></li>
+    
+                </ul>
+                <div class="header-action">
+                    <button type="button" [routerLink]="['/class']" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i
+                            class="fe fe-chevron-left mr-2"></i>Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form [formGroup]='addForm' (ngSubmit)="addForm.valid && addBranch()" autocomplete="off" >
+        <div class="col-md-6 col-lg-4 mt-2">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Add Class</h3>
+                </div>
+                <div class="card-body">
+                    <app-text-input [formControl]='addForm.controls["className"]' [label]='"Class Name"' ></app-text-input>
+                    <div class="row clearfix">
+                        <div class="col-xl-3 col-lg-4 col-md-4">
+                            <button [disabled]='!addForm.valid' type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i 
+                                class="fe fe-plus mr-2"></i>Add</button>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-2">
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"><i class="fe fe-x mr-2"></i>Cancel</button>
+                        </div>      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <app-footer></app-footer>    
+</div>

@@ -1,33 +1,43 @@
-<div class="col-md-6 col-lg-4 mt-2">
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Form validation</h3>
-        </div>
-        <div class="card-body">
-            <div class="form-group">
-                <label class="form-label">Password</label>
-                <input type="password" class="form-control" name="example-password-input"
-                    placeholder="Password..">
-            </div>
-            <div class="form-group">
-                <label class="form-label">Valid State</label>
-                <input type="text" class="form-control is-valid" name="example-text-input-valid"
-                    placeholder="Valid State..">
-                <input type="text" class="form-control mt-3 state-valid" value="Valid state">
-            </div>
-            <div class="form-group">
-                <label class="form-label">Invalid State</label>
-                <input type="text" class="form-control is-invalid" name="example-text-input-invalid"
-                    placeholder="Invalid State..">
-                <div class="invalid-feedback">Invalid feedback</div>
-                <input type="text" class="form-control mt-3 state-invalid" value="Invalid state">
-            </div>
-            <div class="form-group">
-                <label class="form-label">Country</label>
-                <select class="form-control custom-select">
-                    <option value="">Germany</option>
-                </select>
+<app-leftmenu></app-leftmenu>
+<div class="page">
+    <app-header></app-header>
+    <div class="section-body">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between align-items-center">
+                <ul class="nav nav-tabs page-header-tab">
+                    <li class="nav-item"><a class="nav-link active" href="javascript:void(0)">Branch</a></li>
+    
+                </ul>
+                <div class="header-action">
+                    <button type="button" [routerLink]="['/branch']" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i
+                            class="fe fe-chevron-left mr-2"></i>Back</button>
+                </div>
             </div>
         </div>
     </div>
+    <form [formGroup]='addForm' (ngSubmit)="addForm.valid && addBranch()" autocomplete="off" >
+        <div class="col-md-6 col-lg-4 mt-2">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Add Branch</h3>
+                </div>
+                <div class="card-body">
+                    <app-text-input [formControl]='addForm.controls["branchName"]' [label]='"Branch Name"' ></app-text-input>
+                    <app-text-input [formControl]='addForm.controls["isOutBranch"]' [label]='"Is Out Branch"' [type]='"number"' ></app-text-input>
+                    <app-text-input [formControl]='addForm.controls["address"]' [label]='"Address"' ></app-text-input>
+                    <app-text-input [formControl]='addForm.controls["contact"]' [label]='"Contact"' ></app-text-input>
+                    <div class="row clearfix">
+                        <div class="col-xl-3 col-lg-4 col-md-4">
+                            <button [disabled]='!addForm.valid' type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i 
+                                class="fe fe-plus mr-2"></i>Add</button>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-2">
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"><i class="fe fe-x mr-2"></i>Cancel</button>
+                        </div>      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <app-footer></app-footer>    
 </div>

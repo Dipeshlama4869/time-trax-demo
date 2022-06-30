@@ -70,6 +70,11 @@ import { TextInputComponent } from './_forms/text-input/text-input.component';
 import { BranchComponent } from './branch/branch.component';
 import { AddComponent } from './branch/add/add.component';
 import { UpdateComponent } from './branch/update/update.component';
+import { ResultComponent } from './branch/result/result.component';
+import { ClassComponent } from './class/class.component';
+import { AddClassComponent } from './class/add-class/add-class.component';
+import { UpdateClassComponent } from './class/update-class/update-class.component';
+import { ResultClassComponent } from './class/result-class/result-class.component';
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   timeGridPlugin,
@@ -153,6 +158,11 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     BranchComponent,
     AddComponent,
     UpdateComponent,
+    ResultComponent,
+    ClassComponent,
+    AddClassComponent,
+    UpdateClassComponent,
+    ResultClassComponent,
   ],
   providers: [BsDatepickerModule]
 })

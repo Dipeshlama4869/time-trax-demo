@@ -18,6 +18,10 @@ import { WSocialComponent } from './widgets/w-social/w-social.component';
 import { WOtherComponent } from './widgets/w-other/w-other.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { BranchComponent } from './branch/branch.component';
+import { AddComponent } from './branch/add/add.component';
+import { UpdateComponent } from './branch/update/update.component';
+import { ClassComponent } from './class/class.component';
+import { AddClassComponent } from './class/add-class/add-class.component';
 
 
 const routes: Routes = [
@@ -30,6 +34,26 @@ const routes: Routes = [
     path: 'branch',
     component: BranchComponent,
     data: { title: ':: Time Trax :: Branch' }
+  },
+  {
+    path: 'branch-add',
+    component: AddComponent,
+    data: { title: ':: Time Trax :: Add Branch' }
+  },
+  {
+    path: 'branch-update',
+    component: UpdateComponent,
+    data: { title: ':: Time Trax :: Update Branch' }
+  },
+  {
+    path: 'class',
+    component: ClassComponent,
+    data: { title: ':: Time Trax :: Class' }
+  },
+  {
+    path: 'class-add',
+    component: AddClassComponent,
+    data: { title: ':: Time Trax :: Class' }
   },
   {
     path: 'search',
