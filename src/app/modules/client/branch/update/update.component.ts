@@ -25,7 +25,7 @@ export class UpdateComponent implements OnInit {
     })
   }
 
-  updateBranch() {
+  updateClass() {
     this.addBranchService.updateBranch(this.id,this.branch).subscribe(() => {
       this.editForm.reset(this.branch);
     })

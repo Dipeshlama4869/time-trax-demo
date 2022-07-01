@@ -1,6 +1,6 @@
 export interface Branch {
     id: number;
-    name: string;
+    branchName: string;
     isOutBranch: number;
     address: string;
     contact: string;

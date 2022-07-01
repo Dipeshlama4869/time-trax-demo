@@ -75,6 +75,10 @@ import { ClassComponent } from './class/class.component';
 import { AddClassComponent } from './class/add-class/add-class.component';
 import { UpdateClassComponent } from './class/update-class/update-class.component';
 import { ResultClassComponent } from './class/result-class/result-class.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   timeGridPlugin,
@@ -84,6 +88,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 @NgModule({
   imports: [
     CommonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
     ClientRoutingModule,
     ReactiveFormsModule,
     FormsModule,

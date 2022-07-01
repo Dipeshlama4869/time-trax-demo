@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AddBranchService } from '../../_services/add-branch.service';
+import { ClassService } from '../../_services/class.service';
 
 @Component({
   selector: 'app-add-class',
@@ -9,27 +9,24 @@ import { AddBranchService } from '../../_services/add-branch.service';
   styleUrls: ['./add-class.component.scss']
 })
 export class AddClassComponent implements OnInit {
-  addForm: FormGroup;
+  addClassForm: FormGroup;
   validationErrors: string[] =[];
 
-  constructor(private addBranchService: AddBranchService, private fb: FormBuilder, private router: Router) { }
+  constructor(private classService: ClassService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this,this.initializeForm();
   }
 
   initializeForm() {
-    this.addForm = this.fb.group({
-      branchName: ['', Validators.required],
-      isOutBranch: [0, Validators.required],
-      address: ['', Validators.required],
-      contact: ['', Validators.required],
+    this.addClassForm = this.fb.group({
+      className: ['', Validators.required],
     })
   }
 
   addBranch() {
-    this.addBranchService.add(this.addForm.value).subscribe(response => {
-      this.router.navigateByUrl('/branch');
+    this.classService.add(this.addClassForm.value).subscribe(response => {
+      this.router.navigateByUrl('/class');
     }, error => {
       this.validationErrors = error;
     })

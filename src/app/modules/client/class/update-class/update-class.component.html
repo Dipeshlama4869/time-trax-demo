@@ -15,20 +15,20 @@
             </div>
         </div>
     </div>
-    <form [formGroup]='addForm' (ngSubmit)="addForm.valid && addBranch()" autocomplete="off" >
+    <form [formGroup]='editForm' (ngSubmit)="editForm.valid && updateClass()" autocomplete="off" >
         <div class="col-md-6 col-lg-4 mt-2">
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Add Branch</h3>
                 </div>
                 <div class="card-body">
-                    <app-text-input [formControl]='addForm.controls["branchName"]' [label]='"Branch Name"' ></app-text-input>
-                    <app-text-input [formControl]='addForm.controls["isOutBranch"]' [label]='"Is Out Branch"' [type]='"number"' ></app-text-input>
-                    <app-text-input [formControl]='addForm.controls["address"]' [label]='"Address"' ></app-text-input>
-                    <app-text-input [formControl]='addForm.controls["contact"]' [label]='"Contact"' ></app-text-input>
+                    <app-text-input [formControl]='editForm.controls["branchName"]' [label]='"Branch Name"' ></app-text-input>
+                    <app-text-input [formControl]='editForm.controls["isOutBranch"]' [label]='"Is Out Branch"' [type]='"number"' ></app-text-input>
+                    <app-text-input [formControl]='editForm.controls["address"]' [label]='"Address"' ></app-text-input>
+                    <app-text-input [formControl]='editForm.controls["contact"]' [label]='"Contact"' ></app-text-input>
                     <div class="row clearfix">
                         <div class="col-xl-3 col-lg-4 col-md-4">
-                            <button [disabled]='!addForm.valid' type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i 
+                            <button [disabled]='!editForm.valid' type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i 
                                 class="fe fe-plus mr-2"></i>Update</button>
                         </div>
                         <div class="col-xl-2 col-lg-2 col-md-2">

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Branch } from '../_models/branch';
+import { Class } from '../_models/class';
 
 @Injectable({
   providedIn: 'root'
@@ -12,23 +12,23 @@ export class ClassService {
 
   constructor(private http: HttpClient) { }
 
-  add(branch: Branch){
-    return this.http.post(this.baseUrl + '/Branches', branch)
+  add(clas: Class){
+    return this.http.post(this.baseUrl + '/Classes', clas);
   }
 
-  getBranchList() {
-    return  this.http.get<Branch[]>(this.baseUrl + '/Branches');
+  getClassList() {
+    return  this.http.get<Class[]>(this.baseUrl + '/Classes');
   }
 
-  deleteBranch(name: string) {
-    return this.http.delete(this.baseUrl + '/Branches' + name)
+  deleteClass(id: number) {
+    return this.http.delete(this.baseUrl + '/Classes' + id)
   }
 
-  updateBranch(id: number, branch: Branch){
-    return this.http.put(this.baseUrl + '/Branches' + id, branch)
+  updateClass(id: number, clas: Class){
+    return this.http.put(this.baseUrl + '/Classes' + id, clas)
   }
 
-  getBranch(id: number){
-    return this.http.get<Branch>(this.baseUrl + '/Branches' + id)
+  getClass(id: number){
+    return this.http.get<Class>(this.baseUrl + '/Classes' + id)
   }
 }
