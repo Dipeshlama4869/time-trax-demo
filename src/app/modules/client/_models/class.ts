@@ -1,4 +1,4 @@
 export interface Class {
-    id: number;
-    className: string;
+    ClassId: number;
+    ClassName: string;
 }

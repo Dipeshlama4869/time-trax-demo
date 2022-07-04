@@ -15,14 +15,14 @@
             </div>
         </div>
     </div>
-    <form [formGroup]='addClassForm' (ngSubmit)="addClassForm.valid && addBranch()" autocomplete="off" >
+    <form [formGroup]='addClassForm' (ngSubmit)="addClassForm.valid && addClass()" autocomplete="off" >
         <div class="col-md-6 col-lg-4 mt-2">
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Add Class</h3>
                 </div>
                 <div class="card-body">
-                    <app-text-input [formControl]='addClassForm.controls["className"]' [label]='"Class Name"' ></app-text-input>
+                    <app-text-input [formControl]='addClassForm.controls["ClassName"]' [label]='"Class Name"' ></app-text-input>
                     <div class="row clearfix">
                         <div class="col-xl-3 col-lg-4 col-md-4">
                             <button [disabled]='!addClassForm.valid' type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i 

@@ -17,35 +17,39 @@ export class ResultClassComponent implements OnInit {
   isLoading = false;
   totalRows = 0;
   pageSize = 5;
-  currentPage = 0;
+  currentPage = 1;
   pageSizeOptions: number[] = [5, 10 , 25, 100];
 
-  displayedColumns: string[] = ['ClassName'];
+  displayedColumns: string[] = ['ClassId','ClassName'];
   dataSource: MatTableDataSource<Class> = new MatTableDataSource();
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
+  constructor(private classService: ClassService){}
+
+  // ngAfterViewInit() {
+  //   this.dataSource.paginator = this.paginator;
+  // }
 
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.loadData();
   }
 
   loadData() {
     this.isLoading = true;
-    let URL = this.baseUrl + 'Classes'
+    let URL = `https://localhost:7182/Classes?page=${this.currentPage}&limit=${this.pageSize}`
+    console.log(URL)
 
       fetch(URL)
       .then(response => response.json())
       .then(data => {
-        this.dataSource.data = data.rows;
+        console.log(data)
+        this.dataSource.data = data.Data;
         setTimeout(() => {
           this.paginator.pageIndex = this.currentPage;
-          this.paginator.length = data.count;
+          this.paginator.length = data.TotalCount;
         });
         this.isLoading = false;
       }, error => {

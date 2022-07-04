@@ -15,18 +15,20 @@ export class AddClassComponent implements OnInit {
   constructor(private classService: ClassService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
-    this,this.initializeForm();
+    this.initializeForm();
   }
 
   initializeForm() {
     this.addClassForm = this.fb.group({
-      className: ['', Validators.required],
+      ClassName: ['', Validators.required],
     })
   }
 
-  addBranch() {
+  addClass() {
+    console.log(this.addClassForm.value)
     this.classService.add(this.addClassForm.value).subscribe(response => {
       this.router.navigateByUrl('/class');
+      console.log(response)
     }, error => {
       this.validationErrors = error;
     })

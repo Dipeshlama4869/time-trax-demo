@@ -6,7 +6,7 @@
 
             </ul>
             <div class="header-action">
-                <button type="button" class="btn btn-primary" [routerLink]="['/branch-add']" data-toggle="modal" data-target="#exampleModal"><i
+                <button type="button" class="btn btn-primary" [routerLink]="['/class-add']" data-toggle="modal" data-target="#exampleModal"><i
                         class="fe fe-plus mr-2"></i>Add Class</button>
             </div>
         </div>
@@ -21,32 +21,17 @@
         <div class="card-body">
             <div class="mat-elevation-z8">
                 <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
-                <table mat-table [dataSource]="dataSource">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation table">
               
                   <!-- Position Column -->
-                  <ng-container matColumnDef="id">
-                    <th mat-header-cell *matHeaderCellDef> ID </th>
-                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                  <ng-container matColumnDef="ClassId">
+                    <th mat-header-cell *matHeaderCellDef>Class Id</th>
+                    <td mat-cell *matCellDef="let element"> {{element.ClassId}} </td>
                   </ng-container>
               
-                  <ng-container matColumnDef="firstname">
+                  <ng-container matColumnDef="ClassName">
                     <th mat-header-cell *matHeaderCellDef> First Name </th>
-                    <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
-                  </ng-container>
-              
-                  <ng-container matColumnDef="lastname">
-                    <th mat-header-cell *matHeaderCellDef> Last Name </th>
-                    <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
-                  </ng-container>
-              
-                  <ng-container matColumnDef="email">
-                    <th mat-header-cell *matHeaderCellDef> Email </th>
-                    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-                  </ng-container>
-              
-                  <ng-container matColumnDef="reg_date">
-                    <th mat-header-cell *matHeaderCellDef> Reg Date </th>
-                    <td mat-cell *matCellDef="let element"> {{element.reg_date}} </td>
+                    <td mat-cell *matCellDef="let element"> {{element.ClassName}} </td>
                   </ng-container>
               
                   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -16,8 +16,8 @@ export class ClassService {
     return this.http.post(this.baseUrl + '/Classes', clas);
   }
 
-  getClassList() {
-    return  this.http.get<Class[]>(this.baseUrl + '/Classes');
+  getClassList(page: number,limit: number ) {
+    return  this.http.get<Class[]>(this.baseUrl + '/Classes?page='+ page + '&limit=' + limit );
   }
 
   deleteClass(id: number) {
