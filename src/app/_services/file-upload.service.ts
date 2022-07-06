@@ -1,23 +1,26 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FileUploadService {
-  baseApiUrl = "https://file.io"
+  baseUrl = environment.apiUrl;
+  baseApiUrl = this.baseUrl + '/ImportAttendanceLogs/import'
 
   constructor(private http: HttpClient) { }
   
-  upload(file) :Observable<any> {
-    const formData = new FormData();
+  upload(Files: FormData) :Observable<any> {
+    Files.forEach((value,key) => {
+      console.log(key+" "+value)
+    });
     
     // Store form name as "file" with file data
-    formData.append("file", file, file.name);
       
     // Make http post request over api
-    // with formData as req
-    return this.http.post(this.baseApiUrl, formData)
+    // with Files as req
+    return this.http.post(this.baseApiUrl, Files)
   }
 }

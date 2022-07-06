@@ -17,7 +17,9 @@ export class ResultClassComponent implements OnInit {
   isLoading = false;
   totalRows = 0;
   pageSize = 5;
-  currentPage = 1;
+  currentPage = 0;
+  columnSort = "ClassId";
+  sortDirection = "asc";
   pageSizeOptions: number[] = [5, 10 , 25, 100];
 
   displayedColumns: string[] = ['ClassId','ClassName'];
@@ -28,9 +30,9 @@ export class ResultClassComponent implements OnInit {
 
   constructor(private classService: ClassService){}
 
-  // ngAfterViewInit() {
-  //   this.dataSource.paginator = this.paginator;
-  // }
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
 
 
   ngOnInit(){
@@ -39,7 +41,7 @@ export class ResultClassComponent implements OnInit {
 
   loadData() {
     this.isLoading = true;
-    let URL = `https://localhost:7182/Classes?page=${this.currentPage}&limit=${this.pageSize}`
+    let URL = `https://localhost:7182/Classes?page=${this.currentPage + 1}&limit=${this.pageSize}&sortColumn=${this.columnSort}&sortDirection=${this.sortDirection}`
     console.log(URL)
 
       fetch(URL)

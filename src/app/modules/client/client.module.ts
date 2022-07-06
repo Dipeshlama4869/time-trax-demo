@@ -78,6 +78,7 @@ import { ResultClassComponent } from './class/result-class/result-class.componen
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { FileUploadModule } from 'ng2-file-upload';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -119,7 +120,11 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
       apiKey: 'GOOGLE_API_KEY'
     }),
     FullCalendarModule,
-    CKEditorModule
+    CKEditorModule,
+    FileUploadModule,
+  ],
+  exports: [
+    FileUploadModule
   ],
   declarations: [
     ClientRoutingModule.components,
