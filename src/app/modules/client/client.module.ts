@@ -79,6 +79,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FileUploadModule } from 'ng2-file-upload';
+import { ImportAttendanceLogComponent } from './import-attendance-log/import-attendance-log.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -175,6 +176,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     AddClassComponent,
     UpdateClassComponent,
     ResultClassComponent,
+    ImportAttendanceLogComponent,
   ],
   providers: [BsDatepickerModule]
 })

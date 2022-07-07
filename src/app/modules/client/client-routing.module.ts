@@ -22,9 +22,15 @@ import { AddComponent } from './branch/add/add.component';
 import { UpdateComponent } from './branch/update/update.component';
 import { ClassComponent } from './class/class.component';
 import { AddClassComponent } from './class/add-class/add-class.component';
+import { ImportAttendanceLogComponent } from './import-attendance-log/import-attendance-log.component';
 
 
 const routes: Routes = [
+  {
+    path: 'import-attendance-log',
+    component: ImportAttendanceLogComponent,
+    data: { title: ':: Time Trax :: Import Attendance Log' }
+  },
   {
     path: 'attendance',
     component: AttendanceComponent,
