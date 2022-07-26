@@ -1,1 +1,53 @@
-<p>grade works!</p>
+<app-leftmenu></app-leftmenu>
+<div class="page">
+    <app-header></app-header>
+        <div class="section-body">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-between align-items-center">
+                    <ul class="nav nav-tabs page-header-tab">
+                        <li class="nav-item"><a class="nav-link active" href="javascript:void(0)">Grade</a></li>
+        
+                    </ul>
+                    <div class="header-action">
+                        <button type="button" class="btn btn-primary" [routerLink]="['/grade-add']" data-toggle="modal" data-target="#exampleModal"><i
+                                class="fe fe-plus mr-2"></i>Add Grade</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="mat-elevation-z8">
+                        <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+                        <table mat-table [dataSource]="dataSource" class="mat-elevation table">
+                    
+                        <!-- Position Column -->
+                        <ng-container matColumnDef="GradeId">
+                            <th mat-header-cell *matHeaderCellDef>Grade Id</th>
+                            <td mat-cell *matCellDef="let element"> {{element.GradeId}} </td>
+                        </ng-container>
+                    
+                        <ng-container matColumnDef="GradeName">
+                            <th mat-header-cell *matHeaderCellDef> First Name </th>
+                            <td mat-cell *matCellDef="let element"> {{element.GradeName}} </td>
+                        </ng-container>
+                    
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                    
+                        <mat-paginator #paginator [length]="totalRows" [pageIndex]="currentPage" [pageSize]="pageSize"
+                        [pageSizeOptions]="pageSizeOptions" (page)="pageChanged($event)" aria-label="Select page">
+                        </mat-paginator>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    <app-footer></app-footer>
+</div>

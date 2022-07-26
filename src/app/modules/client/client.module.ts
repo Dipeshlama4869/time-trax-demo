@@ -47,7 +47,6 @@ import { ResultClassComponent } from './class/result-class/result-class.componen
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { FileUploadModule } from 'ng2-file-upload';
 import { ModeComponent } from './mode/mode.component';
 import { StatusComponent } from './status/status.component';
 import { GradeComponent } from './grade/grade.component';
@@ -60,6 +59,9 @@ import { AddModeComponent } from './mode/add-mode/add-mode.component';
 import { EditModeComponent } from './mode/edit-mode/edit-mode.component';
 import { AddStatusComponent } from './status/add-status/add-status.component';
 import { EditStatusComponent } from './status/edit-status/edit-status.component';
+import { GradeTypeComponent } from './grade-type/grade-type.component';
+import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -69,6 +71,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 
 @NgModule({
   imports: [
+    MatDialogModule,
     CommonModule,
     MatTableModule,
     MatPaginatorModule,
@@ -102,10 +105,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     }),
     FullCalendarModule,
     CKEditorModule,
-    FileUploadModule,
   ],
   exports: [
-    FileUploadModule
   ],
   declarations: [
     ClientRoutingModule.components,
@@ -137,7 +138,15 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     EditModeComponent,
     AddStatusComponent,
     EditStatusComponent,
+    GradeTypeComponent,
+    ConfirmDialogComponent,
   ],
-  providers: [BsDatepickerModule]
+  providers: [
+    {
+      provide: MatDialogRef,
+      useValue: {}
+    },
+    BsDatepickerModule
+  ]
 })
 export class ClientModule { }

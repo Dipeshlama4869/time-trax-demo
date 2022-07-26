@@ -24,7 +24,9 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     BsDatepickerModule.forRoot(),
     CarouselModule.forRoot(),
     ToastrModule.forRoot({
-      positionClass: 'toast-top-center',
+      timeOut: 5000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
     })
   ],
   providers: [BsDatepickerModule],

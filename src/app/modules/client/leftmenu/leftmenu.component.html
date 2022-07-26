@@ -52,10 +52,8 @@
             <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
                 <a href="javascript:void(0)" (click)="isBranchCollapsed = !isBranchCollapsed"
                     [attr.aria-expanded]="!isBranchCollapsed" aria-controls="BranchCollapsed"
-                    class="has-arrow arrow-c"><i class="fe fe-share-2"></i><span>Branch</span></a>
+                    class="has-arrow arrow-c" [routerLink]="['/branch']" ><i class="fe fe-share-2"></i><span>Branch</span></a>
                 <ul class="collapse" id="BranchCollapsed" [collapse]="isBranchCollapsed" [isAnimated]="true">
-                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="submenu list-b"
-                            [routerLink]="['/branch']" href="javascript:void(0)">Results</a></li>
                     <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="submenu list-b"
                             [routerLink]="['/branch-add']" href="javascript:void(0)">Add Branch</a></li>
                 </ul>
@@ -64,10 +62,8 @@
             <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
                 <a href="javascript:void(0)" (click)="isClassCollapsed = !isClassCollapsed"
                     [attr.aria-expanded]="!isClassCollapsed" aria-controls="ClassCollapsed"
-                    class="has-arrow arrow-c"><i class="fe fe-file-text"></i><span>Class</span></a>
+                    class="has-arrow arrow-c" [routerLink]="['/class']" ><i class="fe fe-file-text"></i><span>Class</span></a>
                 <ul class="collapse" id="ClassCollapsed" [collapse]="isClassCollapsed" [isAnimated]="true">
-                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="submenu list-b"
-                            [routerLink]="['/class']" href="javascript:void(0)">Results</a></li>
                     <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="submenu list-b"
                             [routerLink]="['/class-add']" href="javascript:void(0)">Add Class</a></li>
                 </ul>

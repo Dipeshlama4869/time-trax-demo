@@ -16,15 +16,18 @@
         </div>
     </div>
     <form [formGroup]='addClassForm' (ngSubmit)="addClassForm.valid && addClass()" autocomplete="off" >
-        <div class="col-md-6 col-lg-4 mt-2">
+        <div class="p-4">
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Add Class</h3>
                 </div>
+                <div class="text-red ml-4" *ngIf="isError">
+                    {{errorMessage}}
+                </div>
                 <div class="card-body">
                     <app-text-input [formControl]='addClassForm.controls["ClassName"]' [label]='"Class Name"' ></app-text-input>
                     <div class="row clearfix">
-                        <div class="col-xl-3 col-lg-4 col-md-4">
+                        <div class="mr-1 col-xl-1 col-lg-1 col-md-1">
                             <button [disabled]='!addClassForm.valid' type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i 
                                 class="fe fe-plus mr-2"></i>Add</button>
                         </div>
