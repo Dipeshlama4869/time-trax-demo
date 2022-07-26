@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Branch } from '../../_models/branch';
-import { AddBranchService } from '../../_services/add-branch.service';
+import { AddBranchService } from '../../../../_services/add-branch.service';
 
 @Component({
   selector: 'app-update',

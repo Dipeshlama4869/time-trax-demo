@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AccordionComponent } from 'ngx-bootstrap/accordion';
-import { AddBranchService } from '../../_services/add-branch.service';
+import { AddBranchService } from '../../../../_services/add-branch.service';
 
 @Component({
   selector: 'app-add',
@@ -34,6 +34,7 @@ export class AddComponent implements OnInit {
     }, error => {
       this.validationErrors = error;
     })
+
   }
 
 }

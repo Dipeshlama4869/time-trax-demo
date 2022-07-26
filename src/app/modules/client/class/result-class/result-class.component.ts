@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { ClassService } from 'src/app/_services/class.service';
 import { environment } from 'src/environments/environment';
 import { Class } from '../../_models/class';
-import { ClassService } from '../../_services/class.service';
 
 @Component({
   selector: 'app-result-class',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Branch } from '../../_models/branch';
-import { AddBranchService } from '../../_services/add-branch.service';
+import { AddBranchService } from '../../../../_services/add-branch.service';
 
 @Component({
   selector: 'app-result',

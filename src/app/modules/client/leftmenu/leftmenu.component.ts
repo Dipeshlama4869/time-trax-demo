@@ -8,6 +8,7 @@ import { AppComponent } from 'src/app/app.component';
 })
 export class LeftmenuComponent implements OnInit {
   isClassCollapsed = true;
+  isImportAttendanceCollapsed = true;
   isAttendanceCollapsed = true;
   isBranchCollapsed = true;
   isStaticticsCollapsed = true;
@@ -37,6 +38,9 @@ export class LeftmenuComponent implements OnInit {
     }
     if((this.router.url).includes('class')) {
       this.isClassCollapsed = false;
+    }
+    if((this.router.url).includes('import-attendance-log')) {
+      this.isImportAttendanceCollapsed = false;
     }
   }
 

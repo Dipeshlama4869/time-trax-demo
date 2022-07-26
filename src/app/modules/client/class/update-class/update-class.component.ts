@@ -2,8 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Branch } from '../../_models/branch';
 import { Class } from '../../_models/class';
-import { AddBranchService } from '../../_services/add-branch.service';
-import { ClassService } from '../../_services/class.service';
+import { AddBranchService } from '../../../../_services/add-branch.service';
+import { ClassService } from 'src/app/_services/class.service';
+
 
 @Component({
   selector: 'app-update-class',

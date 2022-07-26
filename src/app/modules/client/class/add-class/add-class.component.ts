@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ClassService } from '../../_services/class.service';
+import { ClassService } from 'src/app/_services/class.service';
+
 
 @Component({
   selector: 'app-add-class',
