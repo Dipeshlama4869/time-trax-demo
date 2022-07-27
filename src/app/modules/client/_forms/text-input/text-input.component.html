@@ -3,6 +3,7 @@
     <input 
         [class.is-invalid]="ngControl.touched && ngControl.invalid"
         type={{type}}
+        value={{value}}
         class="form-control" 
         [formControl]="ngControl.control"
         placeholder={{label}}>

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ConfirmDialogService } from 'src/app/_services/confirm-dialog.service';
 import { ModeService } from 'src/app/_services/mode.service';
@@ -29,7 +30,7 @@ export class ModeComponent implements OnInit {
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
-  constructor(private dialogService: ConfirmDialogService, private modeService: ModeService, private toastr: ToastrService) { }
+  constructor(private dialogService: ConfirmDialogService, private modeService: ModeService,private router: Router, private toastr: ToastrService) { }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -79,5 +80,9 @@ export class ModeComponent implements OnInit {
         })
       }
     });
+  }
+
+  editPageOpen(id : number) {
+    this.router.navigate(['/mode-add', id]);
   }
 }

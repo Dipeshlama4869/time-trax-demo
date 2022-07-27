@@ -40,7 +40,7 @@
                             <td mat-cell *matCellDef="let element">
                                 <div class="row clearfix row-deck">
                                     <div class="">
-                                        <button href="#" class="btn btn-primary">Edit</button> 
+                                        <button (click)="editPageOpen(element.ModeId)" class="btn btn-primary">Edit</button> 
                                     </div>
                                     <div class="ml-2">
                                         <button (click)="delete(element.ModeId)" class="btn btn-primary">Delete</button> 

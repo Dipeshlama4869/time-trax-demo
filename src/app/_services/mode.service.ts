@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Mode } from '../modules/client/_models/mode';
 
@@ -28,7 +29,7 @@ export class ModeService {
     return this.http.put(this.baseUrl + '/Modes/' + id, mode)
   }
 
-  getMode(id: number){
+  getMode(id: number): Observable<Mode>{
     return this.http.get<Mode>(this.baseUrl + '/Modes/' + id)
   }
 }

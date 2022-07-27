@@ -14,6 +14,7 @@ import { AddHolidayComponent } from './holiday/add-holiday/add-holiday.component
 import { AddGradeComponent } from './grade/add-grade/add-grade.component';
 import { StatusComponent } from './status/status.component';
 import { AddStatusComponent } from './status/add-status/add-status.component';
+import { EditModeComponent } from './mode/edit-mode/edit-mode.component';
 
 
 const routes: Routes = [
@@ -59,6 +60,11 @@ const routes: Routes = [
   },
   {
     path: 'mode-add',
+    component: AddModeComponent,
+    data: { title: ':: Time Trax :: Add mode' }
+  },
+  {
+    path: 'mode-add/:id',
     component: AddModeComponent,
     data: { title: ':: Time Trax :: Add mode' }
   },

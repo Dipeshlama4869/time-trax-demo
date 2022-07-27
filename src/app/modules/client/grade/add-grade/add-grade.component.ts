@@ -25,7 +25,6 @@ export class AddGradeComponent implements OnInit {
       GradeId: ['', Validators.required ],
       GradeName: [''],
       GradeType: [''],
-      GradeTypes: [''],
     })
   }
 

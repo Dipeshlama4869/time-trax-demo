@@ -26,6 +26,7 @@
                     {{errorMessage}}
                 </div>
                 <div class="card-body">
+                    <app-text-input [formControl]='addForm.controls["ModeId"]' [label]='"Mode Id"' ></app-text-input>
                     <app-text-input [formControl]='addForm.controls["ModeName"]' [label]='"Mode Name"' ></app-text-input>
                     <app-text-input [formControl]='addForm.controls["ModeAbbreviation"]' [label]='"Mode Abbreviation"' ></app-text-input>
                     <div class="row clearfix">
