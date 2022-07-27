@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { StatusService } from 'src/app/_services/status.service';
+import { GradeTypeService } from 'src/app/_services/grade-type.service';
 
 @Component({
-  selector: 'app-add-status',
-  templateUrl: './add-status.component.html',
-  styleUrls: ['./add-status.component.scss']
+  selector: 'app-add-grade-type',
+  templateUrl: './add-grade-type.component.html',
+  styleUrls: ['./add-grade-type.component.scss']
 })
-export class AddStatusComponent implements OnInit {
+export class AddGradeTypeComponent implements OnInit {
   isError: boolean = false;
   errorMessage: string;
   addForm: FormGroup;
   validationErrors: string[] = [];
 
-  constructor(private fb: FormBuilder, private router: Router, private statusService: StatusService) { }
+  constructor(private fb: FormBuilder, private router: Router, private gradeTypeService: GradeTypeService) { }
 
   ngOnInit(): void {
     this.initializeForm();
@@ -22,19 +22,20 @@ export class AddStatusComponent implements OnInit {
 
   initializeForm() {
     this.addForm = this.fb.group({
-      StatusId: [''],
-      StatusName: ['', Validators.required],
+      GType: ['', Validators.required ],
     })
   }
 
-  addStatus() {
+ 
+  addGrade() {
     console.log(this.addForm.value)
-    this.statusService.add(this.addForm.value).subscribe(response => {
-      this.router.navigateByUrl('/status');
+    this.gradeTypeService.add(this.addForm.value).subscribe(response => {
+      this.router.navigateByUrl('/grade');
       console.log(response)
     }, error => {
       this.errorMessage = error.error[0].Description;
       this.isError = !this.isError
     })
   }
+
 }

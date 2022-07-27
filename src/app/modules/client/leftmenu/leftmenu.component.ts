@@ -8,6 +8,10 @@ import { AppComponent } from 'src/app/app.component';
 })
 export class LeftmenuComponent implements OnInit {
   isClassCollapsed = true;
+  isGradeCollapsed = true;
+  isHolidayCollapsed = true;
+  isModeCollapsed = true;
+  isStatusCollapsed = true;
   isImportAttendanceCollapsed = true;
   isAttendanceCollapsed = true;
   isBranchCollapsed = true;
@@ -38,6 +42,18 @@ export class LeftmenuComponent implements OnInit {
     }
     if((this.router.url).includes('class')) {
       this.isClassCollapsed = false;
+    }
+    if((this.router.url).includes('grade')) {
+      this.isGradeCollapsed = false;
+    }
+    if((this.router.url).includes('holiday')) {
+      this.isHolidayCollapsed = false;
+    }
+    if((this.router.url).includes('mode')) {
+      this.isModeCollapsed = false;
+    }
+    if((this.router.url).includes('status')) {
+      this.isStatusCollapsed = false;
     }
     if((this.router.url).includes('import-attendance-log')) {
       this.isImportAttendanceCollapsed = false;

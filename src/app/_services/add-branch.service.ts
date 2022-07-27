@@ -19,15 +19,15 @@ export class AddBranchService {
     return  this.http.get<Branch[]>(this.baseUrl + '/Branches');
   }
 
-  deleteBranch(name: string) {
-    return this.http.delete(this.baseUrl + '/Branches' + name)
+  deleteBranch(id: number) {
+    return this.http.delete(this.baseUrl + '/Branches/' + id)
   }
 
   updateBranch(id: number, branch: Branch){
-    return this.http.put(this.baseUrl + '/Branches' + id, branch)
+    return this.http.put(this.baseUrl + '/Branches/' + id, branch)
   }
 
   getBranch(id: number){
-    return this.http.get<Branch>(this.baseUrl + '/Branches' + id)
+    return this.http.get<Branch>(this.baseUrl + '/Branches/' + id)
   }
 }

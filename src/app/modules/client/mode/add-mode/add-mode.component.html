@@ -1,1 +1,45 @@
-<p>add-mode works!</p>
+
+<app-leftmenu></app-leftmenu>
+<div class="page">
+    <app-header></app-header>
+    <div class="section-body">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between align-items-center">
+                <ul class="nav nav-tabs page-header-tab">
+                    <li class="nav-item"><a class="nav-link active" href="javascript:void(0)">Mode</a></li>
+    
+                </ul>
+                <div class="header-action">
+                    <button type="button" [routerLink]="['/mode']" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i
+                            class="fe fe-chevron-left mr-2"></i>Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form [formGroup]='addForm' (ngSubmit)="addForm.valid && addMode()" autocomplete="off" >
+        <div class="p-4">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Add Mode</h3>
+                </div>
+                <div class="text-red ml-4" *ngIf="isError">
+                    {{errorMessage}}
+                </div>
+                <div class="card-body">
+                    <app-text-input [formControl]='addForm.controls["ModeName"]' [label]='"Mode Name"' ></app-text-input>
+                    <app-text-input [formControl]='addForm.controls["ModeAbbreviation"]' [label]='"Mode Abbreviation"' ></app-text-input>
+                    <div class="row clearfix">
+                        <div class="mr-1 col-xl-1 col-lg-1 col-md-1">
+                            <button [disabled]='!addForm.valid' type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i 
+                                class="fe fe-plus mr-2"></i>Add</button>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-2">
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"><i class="fe fe-x mr-2"></i>Cancel</button>
+                        </div>      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <app-footer></app-footer>    
+</div>

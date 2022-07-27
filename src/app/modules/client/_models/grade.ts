@@ -4,7 +4,7 @@ export interface GradeType{
 
 export interface Grade{
     GradeId: number;
-    GradeName: string;
-    GradeType: string;
+    GradeName?: string;
+    GradeType?: string;
     GradeTypes?: GradeType;
 }

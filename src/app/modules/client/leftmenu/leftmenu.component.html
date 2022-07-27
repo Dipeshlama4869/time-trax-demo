@@ -1,5 +1,5 @@
 <div id="header_top" class="header_top dark">
-    <!-- <div class="container">
+    <div class="container">
         <div class="hleft">
             <a class="header-brand" [routerLink]="['/attendance']" href="javascript:void(0)"><i
                     class="fe fe-command brand-logo"></i></a>
@@ -28,7 +28,7 @@
                         class="fa  fa-align-left"></i></a>
             </div>
         </div>
-    </div> -->
+    </div>
 </div>
 
 
@@ -37,17 +37,6 @@
     <nav id="left-sidebar-nav" class="sidebar-nav">
         <ul class="metismenu">
             <li class="g_heading">Directories</li>
-
-            <!-- Attendance page route -->
-            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-                <a href="javascript:void(0)" (click)="isAttendanceCollapsed = !isAttendanceCollapsed"
-                    [attr.aria-expanded]="!isAttendanceCollapsed" aria-controls="AttendanceCollapsed"
-                    class="has-arrow arrow-c"><i class="fe fe-airplay"></i><span>Attendance</span></a>
-                <ul class="collapse" id="AttendanceCollapsed" [collapse]="isAttendanceCollapsed" [isAnimated]="true">
-                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="submenu list-b"
-                            [routerLink]="['/attendance']" href="javascript:void(0)">Import</a></li>
-                </ul>
-            </li>
             <!-- Branch page route -->
             <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
                 <a href="javascript:void(0)" (click)="isBranchCollapsed = !isBranchCollapsed"
@@ -56,6 +45,46 @@
                 <ul class="collapse" id="BranchCollapsed" [collapse]="isBranchCollapsed" [isAnimated]="true">
                     <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="submenu list-b"
                             [routerLink]="['/branch-add']" href="javascript:void(0)">Add Branch</a></li>
+                </ul>
+            </li>
+            <!-- Grade Page  nav Route -->
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a href="javascript:void(0)" (click)="isGradeCollapsed = !isGradeCollapsed"
+                    [attr.aria-expanded]="!isGradeCollapsed" aria-controls="GradeCollapsed"
+                    class="has-arrow arrow-c" [routerLink]="['/grade']" ><i class="fe fe-inbox"></i><span>Grade</span></a>
+                <ul class="collapse" id="GradeCollapsed" [collapse]="isGradeCollapsed" [isAnimated]="true">
+                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="submenu list-b"
+                            [routerLink]="['/grade-add']" href="javascript:void(0)">Add Grade</a></li>
+                </ul>
+            </li>
+            <!-- Holiday Page  nav Route -->
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a href="javascript:void(0)" (click)="isHolidayCollapsed = !isHolidayCollapsed"
+                    [attr.aria-expanded]="!isHolidayCollapsed" aria-controls="HolidayCollapsed"
+                    class="has-arrow arrow-c" [routerLink]="['/holiday']" ><i class="fe fe-watch"></i><span>Holiday</span></a>
+                <ul class="collapse" id="HolidayCollapsed" [collapse]="isHolidayCollapsed" [isAnimated]="true">
+                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="submenu list-b"
+                            [routerLink]="['/holiday-add']" href="javascript:void(0)">Add Holiday</a></li>
+                </ul>
+            </li>
+            <!-- Class Page  nav Route -->
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a href="javascript:void(0)" (click)="isModeCollapsed = !isModeCollapsed"
+                    [attr.aria-expanded]="!isModeCollapsed" aria-controls="ModeCollapsed"
+                    class="has-arrow arrow-c" [routerLink]="['/mode']" ><i class="fe fe-package"></i><span>Mode</span></a>
+                <ul class="collapse" id="ModeCollapsed" [collapse]="isModeCollapsed" [isAnimated]="true">
+                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="submenu list-b"
+                            [routerLink]="['/mode-add']" href="javascript:void(0)">Add Mode</a></li>
+                </ul>
+            </li>
+            <!-- Class Page  nav Route -->
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a href="javascript:void(0)" (click)="isStatusCollapsed = !isStatusCollapsed"
+                    [attr.aria-expanded]="!isStatusCollapsed" aria-controls="StatusCollapsed"
+                    class="has-arrow arrow-c" [routerLink]="['/status']" ><i class="fe fe-shopping-bag"></i><span>Status</span></a>
+                <ul class="collapse" id="StatusCollapsed" [collapse]="isStatusCollapsed" [isAnimated]="true">
+                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="submenu list-b"
+                            [routerLink]="['/status-add']" href="javascript:void(0)">Add Status</a></li>
                 </ul>
             </li>
             <!-- Class Page  nav Route -->

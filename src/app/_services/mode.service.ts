@@ -12,8 +12,8 @@ export class ModeService {
 
   constructor(private http: HttpClient) { }
 
-  add(grade: Mode){
-    return this.http.post(this.baseUrl + '/Modes', grade);
+  add(mode: Mode){
+    return this.http.post(this.baseUrl + '/Modes', mode);
   }
 
   getList(page: number,limit: number ) {
@@ -24,8 +24,8 @@ export class ModeService {
     return this.http.delete(this.baseUrl + '/Modes/' + id)
   }
 
-  update(id: number, grade: Mode){
-    return this.http.put(this.baseUrl + '/Modes/' + id, grade)
+  update(id: number, mode: Mode){
+    return this.http.put(this.baseUrl + '/Modes/' + id, mode)
   }
 
   getMode(id: number){

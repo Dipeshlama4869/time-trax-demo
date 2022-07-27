@@ -10,8 +10,11 @@ import { AddBranchService } from '../../../../_services/add-branch.service';
   styleUrls: ['./add.component.scss']
 })
 export class AddComponent implements OnInit {
+  isError: boolean = false;
+  errorMessage: string;
   addForm: FormGroup;
-  validationErrors: string[] =[];
+  validationErrors: string[] = [];
+
 
   constructor(private addBranchService: AddBranchService, private fb: FormBuilder, private router: Router) { }
 
@@ -21,10 +24,10 @@ export class AddComponent implements OnInit {
 
   initializeForm() {
     this.addForm = this.fb.group({
-      branchName: ['', Validators.required],
-      isOutBranch: [0, Validators.required],
-      address: ['', Validators.required],
-      contact: ['', Validators.required],
+      BranchName: ['', Validators.required],
+      IsOutBranch: [0, Validators.required],
+      Address: ['', Validators.required],
+      Contact: ['', Validators.required],
     })
   }
 
@@ -32,7 +35,8 @@ export class AddComponent implements OnInit {
     this.addBranchService.add(this.addForm.value).subscribe(response => {
       this.router.navigateByUrl('/branch');
     }, error => {
-      this.validationErrors = error;
+      console.log(error)
+
     })
 
   }

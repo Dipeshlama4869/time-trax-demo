@@ -1,7 +1,7 @@
 export interface Branch {
-    id: number;
-    branchName: string;
-    isOutBranch: number;
-    address: string;
-    contact: string;
+    BranchId: number;
+    BranchName?: string;
+    IsOutBranch?: number;
+    Address: string;
+    Contact: string;
 }

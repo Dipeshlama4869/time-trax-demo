@@ -62,6 +62,7 @@ import { EditStatusComponent } from './status/edit-status/edit-status.component'
 import { GradeTypeComponent } from './grade-type/grade-type.component';
 import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { AddGradeTypeComponent } from './grade-type/add-grade-type/add-grade-type.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -140,6 +141,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     EditStatusComponent,
     GradeTypeComponent,
     ConfirmDialogComponent,
+    AddGradeTypeComponent,
   ],
   providers: [
     {
